@@ -15,6 +15,9 @@ fichier vsix
 - [ ] M - Ajouter une commande pour forcer le reset des couleurs
 - [ ] L - Ajouter de la CI pour montées de version automatiques
 - [ ] S - Ajouter une image dans le readme pour mieux visualiser
+- [ ] S - Optimiser les teintes de blancs
+- [ ] L - Forcer une couleur à partir d'un favico si prédéfini
+- [ ] M - Optimiser les foreground blancs ou noir en fonction de la teinte
 
 ### Done ✓
 
