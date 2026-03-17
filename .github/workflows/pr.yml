@@ -27,6 +27,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check CHANGELOG is updated
+        run: |
+          git diff origin/main...HEAD --name-only | grep -q "^CHANGELOG.md$" || {
+            echo "CHANGELOG.md must be updated in this PR"
+            exit 1
+          }
+
       - name: Check version is bumped vs main
         run: |
           MAIN_VERSION=$(git show origin/main:package.json | node -e "let d=''; process.stdin.on('data',c=>d+=c).on('end',()=>console.log(JSON.parse(d).version))")
