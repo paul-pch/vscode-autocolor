@@ -1,0 +1,51 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run tests
+        run: xvfb-run npm test
+
+  version-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check version is bumped vs main
+        run: |
+          MAIN_VERSION=$(git show origin/main:package.json | node -e "let d=''; process.stdin.on('data',c=>d+=c).on('end',()=>console.log(JSON.parse(d).version))")
+          PR_VERSION=$(node -p "require('./package.json').version")
+
+          echo "main:  $MAIN_VERSION"
+          echo "PR:    $PR_VERSION"
+
+          node -e "
+            const semver = (v) => v.split('.').map(Number);
+            const [mMaj, mMin, mPat] = semver('$MAIN_VERSION');
+            const [pMaj, pMin, pPat] = semver('$PR_VERSION');
+            const isHigher =
+              pMaj > mMaj ||
+              (pMaj === mMaj && pMin > mMin) ||
+              (pMaj === mMaj && pMin === mMin && pPat > mPat);
+            if (!isHigher) {
+              console.error('Version in package.json must be higher than main ($MAIN_VERSION)');
+              process.exit(1);
+            }
+            console.log('Version bump OK');
+          "
