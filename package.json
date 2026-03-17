@@ -2,7 +2,7 @@
   "name": "autocolor",
   "displayName": "AutoColor",
   "description": "Differentiate VS Code windows with a specific color",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.110.0"
   },
