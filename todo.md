@@ -18,6 +18,7 @@ fichier vsix
 - [ ] S - Optimiser les teintes de blancs
 - [ ] L - Forcer une couleur à partir d'un favico si prédéfini
 - [ ] M - Optimiser les foreground blancs ou noir en fonction de la teinte
+- [ ] S - Pousser sur marketplace vscode
 
 ### Done ✓
 
