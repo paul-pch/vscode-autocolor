@@ -17,6 +17,8 @@
 
 ## Installation
 
+Search **AutoColor** in the [Open VSX Registry](https://open-vsx.org/extension/paul-pch/autocolor) or install manually:
+
 ```bash
 npm run package
 ```
@@ -29,3 +31,11 @@ Then in VS Code: `Extensions > ··· > Install from VSIX`
 npm install
 npm test
 ```
+
+## Contributing
+
+Every pull request targeting `main` must:
+- bump the version in `package.json`
+- update `CHANGELOG.md`
+
+On merge, a release is automatically created on GitHub and published to Open VSX.

@@ -5,6 +5,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-03-17
+
+### Added
+- CI pipeline on pull requests: runs tests, checks version bump and CHANGELOG update
+- CI pipeline on main: packages extension, creates GitHub release, publishes to Open VSX
+
 ## [0.1.0] - 2026-03-17
 
 ### Added
