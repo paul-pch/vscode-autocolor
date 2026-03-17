@@ -1,12 +1,19 @@
-# workspace-color
+<p align="center">
+  <img src="images/logo.png" width="64" alt="AutoColor logo" />
+</p>
 
-Extension VS Code qui applique automatiquement une couleur de bandeau basée sur le nom du dossier workspace.
+<h1 align="center">AutoColor</h1>
 
-## Comportement
+<p align="center">Automatically assigns a unique color to each VS Code workspace based on its folder name, so you can instantly tell your windows apart.</p>
 
-- Calcule une couleur déterministe à partir du nom du dossier racine
-- L'applique au statusBar et titleBar au démarrage
-- Ne touche à rien si `workbench.colorCustomizations` est déjà défini dans `.vscode/settings.json`
+---
+
+## How it works
+
+- On startup, computes a deterministic color from the root folder name
+- Applies it to the title bar and activity bar via `.vscode/settings.json`
+- Does nothing if `workbench.colorCustomizations` is already defined
+- Check the **Output** panel → **AutoColor** to see what happened
 
 ## Installation
 
@@ -14,9 +21,9 @@ Extension VS Code qui applique automatiquement une couleur de bandeau basée sur
 npm run package
 ```
 
-Puis dans VS Code : `Extensions > ... > Install from VSIX`
+Then in VS Code: `Extensions > ··· > Install from VSIX`
 
-## Développement
+## Development
 
 ```bash
 npm install

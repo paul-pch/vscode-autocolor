@@ -2,7 +2,7 @@ import * as assert from 'assert';
 import { hashToColor, hslToHex } from '../colorUtils';
 
 suite('ColorUtils Test Suite', () => {
-    test('TestHashColorShouldReturnSameOutput', () => {
+    test('ShouldReturnSameOutput', () => {
         
         let name1 = "afirstfoldername";
         let hash1 = hashToColor(name1);
@@ -17,17 +17,17 @@ suite('ColorUtils Test Suite', () => {
         assert.strictEqual(hash3.lightness, hash4.lightness);
     });
 
-    test('TestHashColorShouldReturnSpecificOutput', () => {
+    test('ShouldReturnSpecificOutput', () => {
         let hash = hashToColor("afirstfoldername1223é@");
         assert.strictEqual(hash.color, "#af5e2c");
     });
 
-    test('TestHashColorShouldReturnHexaColor', () => {
+    test('ShouldReturnHexaColor', () => {
         let hash = hashToColor("afirstfoldername1223é@");
         assert.match(hash.color, /^#[0-9a-f]{6}$/i);
     });
 
-    test('TestHashColorShouldReturnLightnessInRange', () => {
+    test('ShouldReturnLightnessInRange', () => {
         const hash = hashToColor("afirstfoldername1223é@");
         assert.ok(hash.lightness >= 25 && hash.lightness <= 45);
     });

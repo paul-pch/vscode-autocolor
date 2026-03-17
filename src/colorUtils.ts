@@ -7,7 +7,7 @@ export function hashToColor(name: string): { color: string, lightness: number }{
 
     const hue = Math.abs(hash) % 360;
     const saturation = 60;
-    const lightness = 25 + (Math.abs(hash >> 8) % 20); // entre 25% et 45%
+    const lightness = 25 + (Math.abs(hash >> 8) % 20); // between 25% and 45%
 
     return { color: hslToHex(hue, saturation, lightness), lightness: lightness };
 }
