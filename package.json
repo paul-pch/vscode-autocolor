@@ -1,8 +1,8 @@
 {
   "name": "autocolor",
-  "displayName": "autocolor",
+  "displayName": "AutoColor",
   "description": "Differentiate VS Code windows with a specific color",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.110.0"
   },
@@ -20,6 +20,7 @@
   "main": "./out/extension.js",
   "publisher": "paul-pch",
   "contributes": {},
+  "license": "MIT",
   "scripts": {
     "compile": "tsc -p ./",
     "package": "vsce package",
@@ -35,6 +36,7 @@
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
     "@vscode/vsce": "^3.7.1",
+    "ovsx": "^0.10.9",
     "typescript": "^5.9.3"
   }
 }
