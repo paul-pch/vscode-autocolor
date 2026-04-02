@@ -4,9 +4,9 @@ import * as path from 'path';
 
 export function applyColorIfAbsent(folderUri: vscode.Uri, color: string): boolean {
     const settingsPath = path.join(folderUri.fsPath, '.vscode', 'settings.json');
-    const strongWhite = "#FBFAFD"
+    const strongWhite = "#ffffff"
     const lowWhite = "#FCFBFE"
-    const lowWhite2 = "#fbfafd8f"
+    const lowWhite2 = "#fbfafdb7"
 
     let settings: Record<string, any> = {};
 
@@ -17,8 +17,6 @@ export function applyColorIfAbsent(folderUri: vscode.Uri, color: string): boolea
         } catch {
             return false;
         }
-
-        if (settings['workbench.colorCustomizations']) return false;
     }
 
     settings['workbench.colorCustomizations'] = {
@@ -26,6 +24,7 @@ export function applyColorIfAbsent(folderUri: vscode.Uri, color: string): boolea
         "titleBar.activeForeground": strongWhite,
         "titleBar.inactiveBackground": color,
         "titleBar.inactiveForeground": lowWhite,
+
         "activityBar.background": color,
         "activityBar.foreground": strongWhite,
         "activityBar.inactiveForeground": lowWhite2,
