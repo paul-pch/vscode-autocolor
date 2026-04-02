@@ -17,6 +17,8 @@ export function applyColorIfAbsent(folderUri: vscode.Uri, color: string): boolea
         } catch {
             return false;
         }
+
+        if (settings['workbench.colorCustomizations']) return false;
     }
 
     settings['workbench.colorCustomizations'] = {

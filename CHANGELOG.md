@@ -6,7 +6,6 @@
 
 ### Updated
 - Update default white colors
-- Force color regeneration ( /!\ override existing colors )
 
 ## [0.3.0] - 2026-04-01
 
