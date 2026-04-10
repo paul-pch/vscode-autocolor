@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-04-10
+
+### Fixed
+- VS Code tasks shell not finding `nvm`-managed binaries
+- `Package & Install VSIX` task failing due to shell substitution intercepted by VS Code
+
+### Changed
+- Updated dependencies: `@types/node` 25.x, `@types/vscode` 1.115.0, `typescript` 6.x, `ovsx` 0.10.10
+- `engines.vscode` bumped to `^1.115.0`
+
+
 ## [0.4.0] - 2026-04-02
 
 ### Updated
@@ -10,7 +21,7 @@
 ## [0.3.0] - 2026-04-01
 
 ### Added
-- VS Code task **"Package & Install VSIX"** : compile l'extension, génère le `.vsix` et l'installe automatiquement dans l'instance courante
+- VS Code task **"Package & Install VSIX"**: compiles, packages and installs the extension in one step
 
 ## [0.2.0] - 2026-03-17
 

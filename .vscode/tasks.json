@@ -2,6 +2,12 @@
 // for the documentation about the tasks.json format
 {
 	"version": "2.0.0",
+	"options": {
+		"shell": {
+			"executable": "${env:SHELL}",
+			"args": ["-i", "-c"]
+		}
+	},
 	"tasks": [
 		{
 			"type": "npm",
@@ -19,7 +25,7 @@
 		{
 			"label": "Package & Install VSIX",
 			"type": "shell",
-			"command": "npm run package && code --install-extension $(ls -t *.vsix | head -1) --force",
+			"command": "npm run package && code --install-extension extension.vsix --force",
 			"problemMatcher": [],
 			"presentation": {
 				"reveal": "always",
